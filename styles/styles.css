@@ -15,7 +15,18 @@
   font-display: swap;
 }
 
-/*Pages*/
+/*Pages Global*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .page{
   height: 100%;
   width: 1200px;
@@ -44,7 +55,13 @@
   width: 140px;
   margin-right: 28px;
 }
+.page-header-logo{
+  display: block;
+  position: absolute;
+}
 .navigation-list{
+  display: flex;
+  flex-wrap: wrap;
   width: 500px;
   margin:0;
   padding: 0;
@@ -55,6 +72,8 @@
   margin-left: auto;
 }
 .navigation-link{
+  display: block;
+  padding: 20px 16px;
   font-family: "PT Sans", sans-serif;
   font-size: 20px;
   line-height: 24px;
@@ -65,24 +84,35 @@
   text-decoration: none;
   text-transform: capitalize;
 }
-
+.navigation-user .navigation-link{
+  min-width: 19px;
+  min-height: 19px;
+}
 /*Main index*/
-.promo{
+.main-container{
+  padding-top: 51px;
+}
+.main-index{
   color: #000000;
-  background-color: #83b3d3;
+  background-color: #ffffff;
   background-image: url(../images/divider.svg),url(../images/index-background.jpg);
+  background-position: 0 428px, top;
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
 .welcome-sedona{
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 82px;
 }
 /*Advantages*/
 .advantages-intro{
   text-align: center;
+  padding-top: 69px;
+  padding-bottom: 69px;
 }
 .intro-title{
+  margin: 0 auto 25px;
+  max-width: 620px;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
@@ -91,16 +121,20 @@
 .intro-description{
   font-weight: 400;
   color: #333333;
+  margin: 0 auto;
+  max-width: 651px;
 }
 
 /*Advantages List*/
 .advantages-list{
   padding: 0;
+  margin: 0;
   text-align: center;
   list-style-type: none;
 }
-/*Advantages background*/
 .advantages-item{
+  display: flex;
+  justify-content: center;
   background-color: #83b3d3;
 }
 .advantages-item:nth-child(2n){
@@ -109,9 +143,12 @@
 .advantages-item:nth-child(3){
   background-color: rgba(131, 179, 211, 0.2);
 }
-
-/*Advantages fonts*/
+.advantages-content{
+  padding: 103px 85px;
+}
 .advantages-title{
+  margin: 0 auto 62px;
+  max-width: 175px;
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
@@ -122,6 +159,8 @@
   color: #ffffff;
 }
 .advantages-description{
+  margin: 0;
+  max-width: 230px;
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
@@ -139,8 +178,12 @@
 /*Recommendations*/
 .recommendations-advice{
   text-align: center;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 .advice-title{
+  margin: 0 auto 20px;
+  max-width: 505px;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
@@ -149,31 +192,37 @@
 .advice-description{
   font-weight: 400;
   color: #333333;
+  margin: 0 auto;
+  max-width: 490px;
 }
 
 /*Recommendations List*/
 .recommendations-list{
-  text-align: center;
-  list-style-type: none;
-}
-/*Recommendations background*/
-.recommendations-list{
   display: flex;
   padding: 0;
   background-color: rgba(131, 179, 211, 0.12);
+  text-align: center;
+  list-style-type: none;
 }
 .recommendations-item:nth-child(2){
   background-color: #ffffff;
 }
-
+.recommendations-item{
+  width: 400px;
+}
+.recommendations-content{
+  padding: 80px 85px;
+}
 /*Recommendations fonts*/
 .recommendations-title{
+  margin:102px auto 30px;
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
   text-transform: uppercase;
 }
 .recommendations-description{
+  margin: 0 auto;
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
@@ -183,21 +232,27 @@
 
 /*Search*/
 .search{
+  padding: 96px 0;
   text-align: center;
 }
 .search-title{
+  margin: 0 auto 20px;
+  max-width: 297px;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
 }
 .search-description{
+  margin:0 auto 54px;
+  max-width: 592px;
   font-weight: 400;
   color: #333333;
 }
 
 /*Newletter*/
 .newsletter{
+  padding: 94px 0 104px;
   text-align: center;
   color:#ffffff;
   background-color: #83b3d3;
@@ -206,12 +261,16 @@
   background-repeat: no-repeat;
 }
 .newsletter-title{
+  margin: 0 auto 20px;
+  max-width: 404px;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
 }
 .newsletter-description{
+  margin: 0 auto 54px;
+  max-width: 475px;
   font-weight: 400;
 }
 
@@ -223,13 +282,25 @@
 .page-footer-container{
   display:flex;
   justify-content: space-between;
+  margin: 0 70px;
+  padding-top: 40px;
+  padding-bottom: 30px;
 }
 /*Footer social*/
 .footer-social{
-  max-width: 142px;
+  max-width: 190px;
 }
 .footer-social-list{
+  display:flex;
+  justify-content:flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
   list-style-type: none;
+}
+.footer-social-item{
+  width: 47.33px;
+  height: 40px;
 }
 .social-link{
   text-decoration: none;
@@ -237,6 +308,7 @@
 
 /*Footer contacts*/
 .contacts-link{
+  margin: 0 auto;
   font-size: 40px;
   line-height: 40px;
   font-weight: 400;
@@ -251,6 +323,8 @@
 /*Catalog*/
 /*Catalog filter*/
 .filter-container{
+  padding: 35px 70px 70px;
+  margin-bottom: 50px;
   color: #ffffff;
   background-color: #83b3d3;
   background-image: url(../images/background-filter.jpg);
@@ -258,16 +332,23 @@
   background-repeat: no-repeat;
 }
 .inner-title{
+  margin: 0;
+  margin-bottom: 8px;
   font-size: 60px;
   line-height: 78px;
   font-weight: 700;
 }
 
 .breadcrumbs-list{
+  display: flex;
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
   list-style-type: none;
 }
 .breadcrumbs-link,
 .breadcrumbs-span{
+  margin-right: 25px;
   font-size: 16px;
   line-height: 21px;
   font-weight: 400;
@@ -291,16 +372,28 @@
 
 /*Filter results*/
 .filter-results{
+  display: flex;
+  margin: 0 70px 40px;
   color: #000000;
   background-color: #ffffff;
 }
 .filter-results-title{
+  margin: auto auto 0 0;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
 }
-
+.select-control{
+  margin-right: 70px;
+}
+.card-grid-toggle{
+  width: 48px;
+  height: 48px;
+}
+.card-grid-toggle:not(:last-child){
+  margin-right: 8px;
+}
 /*Product cards*/
 .product-card-list{
   list-style-type: none;
@@ -340,15 +433,38 @@
 /*Pagination*/
 
 .pagination-list{
+  display: flex;
+  margin: 0 70px;
+  margin-bottom: 60px;
+  padding: 0;
   list-style-type: none;
 }
+.pagination-item:not(:last-child){
+  margin-right: 8px;
+}
 .pagination-link{
+  display:block;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  width: 60px;
+  height: 60px;
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
   color: #ffffff;
   background-color: #83b3d3;
   text-decoration: none;
+}
+.pagination-item span{
+  display: block;
+  box-sizing: border-box;
+  width: 60px;
+  line-height: 36px;
+  height: 60px;
+  padding: 12px 24px;
+}
+.pagination-link:last-child{
+  padding: 12px 19px;
 }
 .pagination-current{
   color:#000000;
