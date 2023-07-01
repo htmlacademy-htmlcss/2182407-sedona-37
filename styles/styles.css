@@ -127,6 +127,8 @@
 
 /*Advantages List*/
 .advantages-list{
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
   padding: 0;
   margin: 0;
   text-align: center;
@@ -169,6 +171,10 @@
 }
 .advantages-item img{
   display: block;
+}
+.advantages-item:first-child,
+.advantages-item:last-child{
+  grid-column: 1/-1;
 }
 .advantages-item:first-child .advantages-description,
 .advantages-item:last-child .advantages-description {
@@ -396,10 +402,24 @@
 }
 /*Product cards*/
 .product-card-list{
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
   list-style-type: none;
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+  grid-gap: 20px;
 }
 .product-card{
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
+  margin: 20px;
+}
+.product-card-image{
+  display: block;
+  margin: 0;
+  margin-bottom: 16px;
 }
 .product-card-link{
   text-decoration: none;
@@ -409,18 +429,29 @@
   line-height: 28px;
   font-weight: 700;
   color: #000000;
+  margin: 0;
+  margin-bottom: 16px;
+}
+.product-card-info{
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  grid-column-gap: 20px;
+  grid-row-gap: 16px;
 }
 .product-card-status{
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
   color: #333333;
+  margin: 0;
 }
 .product-card-price{
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
+  text-align: right;
   color: #333333;
+  margin: 0;
 }
 .product-card-rating{
   font-size: 16px;
@@ -455,14 +486,7 @@
   background-color: #83b3d3;
   text-decoration: none;
 }
-.pagination-item span{
-  display: block;
-  box-sizing: border-box;
-  width: 60px;
-  line-height: 36px;
-  height: 60px;
-  padding: 12px 24px;
-}
+
 .pagination-link:last-child{
   padding: 12px 19px;
 }
