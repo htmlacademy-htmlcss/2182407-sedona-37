@@ -26,7 +26,8 @@
   font-weight: 400;
   font-family: "PT Sans", sans-serif;
   color: #000000;
-  background-color: #ffffff;
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.8);
 }
 .visually-hidden {
   position: absolute;
@@ -159,7 +160,7 @@
 .navigation-list {
   display: flex;
   flex-wrap: wrap;
-  width: 500px;
+  max-width: 500px;
   margin:0;
   padding: 0;
   list-style-type: none;
@@ -170,6 +171,7 @@
 .navigation-user {
   max-width: 320px;
   margin-left: auto;
+  margin-right: 70px;
 }
 .navigation-link {
   display: block;
@@ -185,13 +187,14 @@
   background-color: #ffffff;
 }
 .navigation-user .navigation-link {
-  min-width: 19px;
-  min-height: 19px;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 22px 12px;
 }
 .navigation-link--current::before {
   position: absolute;
   right: 16px;
-  bottom: 0;
+  bottom: -1px;
   left: 16px;
   height: 2px;
   background-color: #756257;
@@ -207,7 +210,25 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.header-button {
+.quantity {
+  position: absolute;
+  top: 11px;
+  left: 20px;
+  display: block;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+  color:#ffffff;
+  background-color: #7DB54F;
+  border-radius: 50%;
+}
+.navigation-item > .header-button {
   margin: 14px 0px 14px 20px;
   padding: 8px 34px;
   font-size: 16px;
@@ -238,7 +259,7 @@
 /*Advantages*/
 .advantages-intro {
   padding-top: 69px;
-  padding-bottom: 69px;
+  padding-bottom: 90px;
   text-align: center;
 }
 .intro-title {
@@ -277,15 +298,22 @@
   background-color: rgba(131, 179, 211, 0.2);
 }
 .advantages-content {
+  padding: 113px 85px;
+  padding-bottom: 112px;
+}
+.advantages-item:first-child .advantages-content,
+.advantages-item:last-child .advantages-content {
   padding: 102px 85px;
 }
 .advantages-title {
   position: relative;
   max-width: 175px;
   margin: 0 auto 62px;
+  padding: 0;
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
+  text-align: center;
   text-transform: uppercase;
 }
 .advantages-item:first-child .advantages-title,
@@ -298,8 +326,8 @@
 }
 .advantages-title::after {
   position: absolute;
-  top: 85px;
-  left: 55px;
+  top: 86px;
+  left: 58px;
   width: 60px;
   height: 2px;
   display: block;
@@ -578,6 +606,9 @@
   height: 100%;
   background-color: rgba(242, 242, 242, 0.8);
 }
+.modal-container-close {
+  display: none;
+}
 .modal {
   position: relative;
   margin: auto;
@@ -769,6 +800,44 @@
   border-radius: 46px;
   cursor: pointer;
 }
+/*.tooltip {
+  position: absolute;
+  margin-top: 4px;
+  margin-left: 2px;
+  width: 16px;
+  height: 16px;
+}*/
+.tooltip-text {
+  position: absolute;
+  right: 15%;
+  width: 216px;
+  padding: 15px 18px;
+  margin-top: 15px;
+  display: none;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #333333;
+  border: 0;
+  border-radius: 10px;
+}
+.tooltip-text::after {
+  content: " ";
+  width: 19px;
+  height: 9px;
+  bottom: 100%;
+  position: absolute;
+  left: 0;
+  right: 18%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("../images/tooltip-arrow.svg");
+}
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
 .children-group .modal-field {
   width: 11px;
 }
@@ -805,6 +874,7 @@
   background-color: #82b3d3;
   border-radius: 4px;
 }
+
 /*Catalog*/
 /*Catalog filter*/
 .filter-container {

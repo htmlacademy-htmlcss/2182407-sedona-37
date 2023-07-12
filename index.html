@@ -29,7 +29,10 @@
               <a class="navigation-link" href="#"><span class="visually-hidden">Поиск</span></a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-link" href="#"><span class="visually-hidden">Избранное</span></a>
+              <a class="navigation-link" href="#">
+                <span class="visually-hidden">Избранное</span>
+                <span class="quantity">12</span>
+              </a>
             </li>
             <li class="navigation-item">
               <a class="navigation-link header-button" href="#">Хочу сюда!</a>
@@ -42,7 +45,7 @@
         <img class="welcome-sedona" src="images/welcome.svg" width="458" height="352" alt="Добро пожаловать в Седону">
         <section class="advantages">
           <div class="advantages-intro">
-            <h2 class="intro-title">Седона - небольшой городок в Аризоне, заслуживающий большего!</h2>
+            <h2 class="intro-title">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
             <p class="intro-description">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
           </div>
           <div class="advantages-structure">
@@ -51,7 +54,7 @@
               <li class="advantages-item">
                 <div class="advantages-content">
                   <h3 class="advantages-title">Настоящий городок</h3>
-                  <p class="advantages-description">Седона - не аттракцион для туристов, там течёт своя жизнь</p>
+                  <p class="advantages-description">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
                 </div>
                 <img src="images/photo-1.jpg" width="800" height="385" alt="Городок Седона">
               </li>
@@ -76,7 +79,7 @@
               <li class="advantages-item">
                 <img src="images/photo-2.jpg" width="800" height="385" alt="Мост дьявола">
                 <div class="advantages-content">
-                  <h3 class="advantages-title">Там есть мост дьявола</h3>
+                  <h3 class="advantages-title">Там есть мост&nbsp;дьявола</h3>
                   <p class="advantages-description">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
                 </div>
               </li>
@@ -166,7 +169,7 @@
         </div>
       </footer>
     </div>
-    <div class="modal-container">
+    <div class="modal-container modal-container-close">
       <div class="modal modal-search">
         <button class="modal-close-button" type="button">
           <span class="visually-hidden">Закрыть</span>
@@ -203,9 +206,12 @@
               </p>
               <p class="children-group">
                 <label class="modal-form-label" for="children-group">Дети:</label>
-                <button class="modal-button-info" type="button">
-                  <span class="visually-hidden">Информация</span>
-                </button>
+                <span class="tooltip">
+                  <button class="modal-button-info tooltip-toggle" type="button" aria-labelledby="toopltip-label-children">
+                    <span class="visually-hidden">Информация</span>
+                  </button>
+                  <span class="tooltip-text" role="tooltip" id="toopltip-label-children">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+                </span>
                 <button class="children-minus" type="button">
                   <span class="visually-hidden">Убавить</span>
                 </button>
